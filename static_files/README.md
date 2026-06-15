@@ -1,0 +1,1 @@
+Run with docker compose up and visit localhost:8080 to see the static files being served
