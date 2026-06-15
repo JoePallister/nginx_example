@@ -7,18 +7,10 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
-      - app1a
-      - app1b
+      - app1
       - app2
 
-  app1a:
-    image: python:3.12-slim
-    working_dir: /app
-    volumes:
-      - ./app1:/app
-    command: python server.py
-
-  app1b:
+  app1:
     image: python:3.12-slim
     working_dir: /app
     volumes:
