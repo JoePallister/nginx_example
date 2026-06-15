@@ -10,3 +10,9 @@ http://localhost:8080/app2/
 
 This example has proxy_set_header Host $host; for one of the apps, this passes the client host ip 
 on to the app in a header (so we see Host: localhost in our printed header). If we visit app2 (which doesn't have proxy_set header) we just see Host: app2:8000
+
+We also set headers
+
+X-Real-IP $remote_addr (the IP of the client)
+X-Forwarded-For $proxy_add_x_forwarded_for (this records the whole chain of IPs, e.g. if we have another proxy in front)
+X-Forwarded-Proto $scheme (http / https)
